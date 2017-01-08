@@ -1,0 +1,23 @@
+using System;
+
+
+namespace rollTheDice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random numberGenerator = new Random();
+            var numberOfAttempts = 0;
+            var options = 0;
+            while(options!=6)
+            {
+                options = numberGenerator.Next(1, 7);
+                numberOfAttempts++;
+                Console.WriteLine("You rolled: {0}", options);
+            }
+            Console.WriteLine("It took you {0} attempts to roll a Six ", numberOfAttempts);
+
+        }
+    }
+}
