@@ -1,0 +1,28 @@
+using System;
+
+namespace strings
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //char copyright = '\u00A9';
+            //Console.WriteLine(copyright);
+
+            int i, j;
+
+            for (i = 0; i < 9; i++)
+            {
+
+                for (j = 9 - i; j > 0; j--)
+                    Console.Write(" ");
+
+                for (j = 0; j <= 2 * i; j++)
+                    Console.Write("\u00A9");
+
+                Console.WriteLine();
+
+            }
+        }
+    }
+}
