@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+
+namespace metricConverter
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var distance = double.Parse(Console.ReadLine());
+            string from = Console.ReadLine();
+            string to = Console.ReadLine();
+            var metricDistances = new Dictionary<string, double>();
+            metricDistances.Add("m", 1);
+            metricDistances.Add("mm", 1000);
+            metricDistances.Add("cm", 100);
+            metricDistances.Add("mi", 0.000621371192);
+            metricDistances.Add("in", 39.3700787);
+            metricDistances.Add("km", 0.001);
+            metricDistances.Add("ft", 3.2808399);
+            metricDistances.Add("yd", 1.0936133);
+            var result = distance / metricDistances[from] * metricDistances[to];
+            Console.WriteLine("{0} {1}", result, to);
+        }
+    }
+}
