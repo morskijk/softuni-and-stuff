@@ -1,0 +1,25 @@
+using System;
+
+namespace tryouts
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                ConsoleKeyInfo key = Console.ReadKey();
+                Console.WriteLine();
+                Console.WriteLine("You Pressed = {0}", key.Key);
+                Console.WriteLine("Key Number = {0}", (int)key.Key);
+                Console.WriteLine("Special Keys= [{0}] ", key.Modifiers);
+                Console.WriteLine("Character Entered= " + key.KeyChar);
+                if (key.Key == ConsoleKey.Escape)
+                {
+                    Console.WriteLine("bye bii");
+                    return;
+                }
+            }
+        }
+    }
+}
