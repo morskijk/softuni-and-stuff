@@ -1,0 +1,52 @@
+using System;
+
+
+namespace hotelRoom
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string month = Console.ReadLine();
+            var nightsSpent = int.Parse(Console.ReadLine());
+            var studioPerNight = 0.0;
+            var apartPerNight = 0.0;
+            if (month=="May" || month=="October")
+            {
+                studioPerNight = 50;
+                apartPerNight = 65;
+                if (nightsSpent>7 && nightsSpent<=14)
+                {
+                    studioPerNight -=(studioPerNight * 0.05);                  
+                }
+                else if (nightsSpent > 14)
+                {
+                    studioPerNight-= (studioPerNight * 0.3);
+                    apartPerNight -= (apartPerNight * 0.1);
+
+                }
+            }
+            else if (month=="June" || month=="September")
+            {
+                studioPerNight = 75.2;
+                apartPerNight = 68.7;
+                if (nightsSpent > 14)
+                {
+                    studioPerNight -=(studioPerNight * 0.2);
+                    apartPerNight -= (apartPerNight * 0.1);
+                }
+            }
+            else if (month=="July" || month=="August")
+            {
+                studioPerNight = 76;
+                apartPerNight = 77;
+                if (nightsSpent>14)
+                {
+                    apartPerNight -= apartPerNight * 0.1;
+                }
+            }
+            Console.WriteLine("Apartment: {0:F2} lv.",apartPerNight*nightsSpent);
+            Console.WriteLine("Studio: {0:F2} lv.",studioPerNight*nightsSpent);
+        }
+    }
+}
