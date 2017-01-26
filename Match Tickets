@@ -1,0 +1,93 @@
+using System;
+
+
+namespace Tickets
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //VIP=499.99
+            //Normal=249.99
+            var budget = double.Parse(Console.ReadLine());
+            string type = Console.ReadLine();
+            var people = int.Parse(Console.ReadLine());
+            var moneyForTransport = 0.0;
+            var neededMoney = 0.0;
+            if (type == "VIP")
+            {
+                neededMoney = 499.99*people;
+                if (people >= 1 && people <= 4)
+                {
+                    moneyForTransport = budget * 0.75;
+                    budget -= moneyForTransport;
+                }
+                else if (people >= 5 && people <= 9)
+                {
+                    moneyForTransport = budget * 0.6;
+                    budget -= moneyForTransport;
+                }
+                else if (people >= 10 && people <= 24)
+                {
+                    moneyForTransport = budget * 0.5;
+                    budget -= moneyForTransport;
+                }
+                else if (people >= 25 && people <= 49)
+                {
+                    moneyForTransport = budget * 0.4;
+                    budget -= moneyForTransport;
+                }
+                else if (people >= 50)
+                {
+                    moneyForTransport = budget * 0.25;
+                    budget -= moneyForTransport;
+                }
+                if (budget >= neededMoney)
+                {
+                    Console.WriteLine("Yes! You have {0:F2} leva left.", Math.Abs(budget - neededMoney));
+                }
+                else
+                {
+                    Console.WriteLine("Not enough money! You need {0:F2} leva.", Math.Abs(budget - neededMoney));
+                }
+            }
+            else if (type == "Normal")
+            {
+                neededMoney = 249.99*people;
+                if (people >= 1 && people <= 4)
+                {
+                    moneyForTransport = budget * 0.75;
+                    budget -= moneyForTransport;
+                }
+                else if (people >= 5 && people <= 9)
+                {
+                    moneyForTransport = budget * 0.6;
+                    budget -= moneyForTransport;
+                }
+                else if (people >= 10 && people <= 24)
+                {
+                    moneyForTransport = budget * 0.5;
+                    budget -= moneyForTransport;
+                }
+                else if (people >= 25 && people <= 49)
+                {
+                    moneyForTransport = budget * 0.4;
+                    budget -= moneyForTransport;
+                }
+                else if (people >= 50)
+                {
+                    moneyForTransport = budget * 0.25;
+                    budget -= moneyForTransport;
+                }
+                if (budget >= neededMoney)
+                {
+                    Console.WriteLine("Yes! You have {0:F2} leva left.", Math.Abs(budget - neededMoney));
+                }
+                else
+                {
+                    Console.WriteLine("Not enough money! You need {0:F2} leva.", Math.Abs(budget - neededMoney));
+                }
+            }
+        }
+    }
+}
