@@ -1,0 +1,79 @@
+using System;
+
+
+namespace operationsBetweenNumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var num1 = int.Parse(Console.ReadLine());
+            var num2 = int.Parse(Console.ReadLine());
+            string operation = Console.ReadLine();
+            double res = 0;
+            if (operation=="+")
+            {
+                res = num1 + num2;
+                Console.Write("{0} + {1} = {2} - ",num1,num2,res);
+                if (res % 2 == 0)
+                {
+                    Console.WriteLine("even");
+                }
+                else
+                {
+                    Console.WriteLine("odd");
+                }
+            }
+            else if (operation == "*")
+            {
+                res = num1 * num2;
+                Console.Write("{0} * {1} = {2} - ", num1, num2, res);
+                if (res % 2 == 0)
+                {
+                    Console.WriteLine("even");
+                }
+                else
+                {
+                    Console.WriteLine("odd");
+                }
+            }
+            else if (operation == "-")
+            {
+                res = num1 - num2;
+                Console.Write("{0} - {1} = {2} - ", num1, num2, res);
+                if (res % 2 == 0)
+                {
+                    Console.WriteLine("even");
+                }
+                else
+                {
+                    Console.WriteLine("odd");
+                }
+            }
+            else if (operation == "/")
+            {
+                if (num2 == 0)
+                {
+                    Console.WriteLine("Cannot divide {0} by zero", num1);
+                }
+                else
+                {
+                    res = num1 / (double)num2;
+                    Console.WriteLine("{0} / {1} = {2:F2} ", num1 , num2, res);
+                }
+            }
+            else if (operation == "%")
+            {
+                if (num2 == 0)
+                {
+                    Console.WriteLine("Cannot divide {0} by zero", num1);
+                }
+                else
+                {
+                    res = num1 % num2;
+                    Console.WriteLine("{0} % {1} = {2}", num1, num2, res);
+                }
+            }
+        }
+    }
+}
