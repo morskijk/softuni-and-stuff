@@ -1,0 +1,78 @@
+using System;
+
+
+namespace evenOddPositions
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var oddSum = 0.0;
+            var oddMin = 1000000000.0;
+            var oddMax = -1000000000.0;
+            var evenSum = 0.0;
+            var evenMin = 1000000000.0;
+            var evenMax = -1000000000.0;
+            for (int i = 0; i < n; i++)
+            {
+                var num = double.Parse(Console.ReadLine());
+                if (i % 2 != 0)
+                {
+                    oddSum += num;
+                    if (num>oddMax)
+                    {
+                        oddMax = num;
+                    }
+                    if (num<oddMin)
+                    {
+                        oddMin = num;
+                    }
+                }
+                if (i%2==0)
+                {
+                    evenSum+=num;
+                    
+                        if (num > evenMax)
+                        {
+                            evenMax = num;
+                        }
+                        if (num < evenMin)
+                        {
+                            evenMin = num;
+                        }
+                    
+                }
+                
+            }
+            if ((oddMin == 1000000000.0 || oddMax == -1000000000.0) && (evenMin == 1000000000.0 || evenMax == -1000000000.0))
+            {
+                Console.WriteLine("OddSum={0}", evenSum);
+                Console.WriteLine("OddMin=No");
+                Console.WriteLine("OddMax=No");
+                Console.WriteLine("EvenSum={0}", oddSum);
+                Console.WriteLine("EvenMin=No");
+                Console.WriteLine("EvenMax=No");
+            }
+            else if (oddMin== 1000000000.0 || oddMax==-1000000000.0 )
+                    {
+                Console.WriteLine("OddSum={0}",evenSum);
+                Console.WriteLine("OddMin={0}",evenMin);
+                Console.WriteLine("OddMax={0}",evenMax);
+                Console.WriteLine("EvenSum={0}",oddSum);
+                Console.WriteLine("EvenMin=No");
+                Console.WriteLine("EvenMax=No");
+            }
+            
+            else
+            {
+                Console.WriteLine("OddSum={0}", evenSum);
+                Console.WriteLine("OddMin={0}", evenMin);
+                Console.WriteLine("OddMax={0}", evenMax);
+                Console.WriteLine("EvenSum={0}", oddSum);
+                Console.WriteLine("EvenMin={0}",oddMin);
+                Console.WriteLine("EvenMax={0}",oddMax);
+            }
+        }
+    }
+}
