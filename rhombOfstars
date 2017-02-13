@@ -1,0 +1,36 @@
+using System;
+
+
+namespace rhombOfStairs
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            //upper part
+            for (int row = 1; row <= n; row++)
+            {
+                var line = new string (' ',n-row);
+                for (int i = 1; i <= row; i++)
+                {
+                    line += "*";
+                    line += " ";
+
+                }
+                Console.WriteLine(line);
+            }
+            //lower part
+            for (int j =1; j <=n-1; j++)
+            {
+                var lowerRows = new string(' ', n -(n-j));
+                for (int k = n; k >j ; k--)
+                {
+                    lowerRows += "* ";
+                    
+                }
+                Console.WriteLine(lowerRows);
+            }
+        }
+    }
+}
