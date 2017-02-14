@@ -1,0 +1,19 @@
+using System;
+
+
+namespace christmasTree
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            for (int i = 0; i < n + 1; i++)
+            {
+                var line = new string(' ', n - i) + new string('*', i) + " | " + new string('*',i) + new string(' ', n - i);
+                Console.WriteLine(line);
+            }
+
+        }
+    }
+}
